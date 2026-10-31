@@ -10,6 +10,7 @@ const windows = platform() === "win32";
 const [major, minor] = process.versions.node.split(".").map(Number);
 if (major < 22 || (major === 22 && minor < 20)) {
   console.error(`Need Node.js 22.20 or later. This machine has ${process.versions.node}.`);
+  console.error("Install a current Node.js and run this script again. npx skills add luzaio/aio is not a substitute.");
   process.exit(1);
 }
 
@@ -28,12 +29,20 @@ const skills = [
 
 const agents = ["cursor", "claude-code", "codex"];
 
+function quoteCmd(arg) {
+  if (!windows) return arg;
+  const escaped = String(arg).replaceAll("%", "%%").replaceAll('"', '""');
+  if (escaped === "" || /[\s"&|<>^%]/.test(arg)) return `"${escaped}"`;
+  return escaped;
+}
+
 function add(repo, skill) {
   console.log(`→ ${skill}`);
   const args = ["-y", "skills", "add", repo, "--skill", skill, "-g", "-y"];
   for (const agent of agents) args.push("-a", agent);
   if (windows) args.push("--copy");
-  const result = spawnSync("npx", args, { stdio: "inherit", shell: windows });
+  const file = windows ? "npx.cmd" : "npx";
+  const result = spawnSync(file, args.map(quoteCmd), { stdio: "inherit", shell: windows });
   if (result.error) {
     console.error(result.error.message);
     process.exit(1);
@@ -53,7 +62,28 @@ else {
 
 for (const [repo, skill] of skills) add(repo, skill);
 
+const names = ["aio", ...skills.map(([, skill]) => skill)];
 const home = homedir();
-console.log("Done. Installed for Cursor, Claude Code, and Codex.");
-console.log(path.join(home, ".cursor", "skills"));
-console.log("Reload the app and type /aio");
+const targets = [
+  ["Cursor", path.join(home, ".cursor", "skills")],
+  ["Claude Code", path.join(home, ".claude", "skills")],
+  ["Codex", path.join(home, ".agents", "skills")],
+];
+
+const missing = [];
+for (const [label, dir] of targets) {
+  for (const name of names) {
+    const file = path.join(dir, name, "SKILL.md");
+    if (!existsSync(file)) missing.push(`${label}: ${file}`);
+  }
+}
+
+if (missing.length) {
+  console.error("Install incomplete. Missing:");
+  for (const file of missing) console.error(file);
+  process.exit(1);
+}
+
+console.log("Done. Eleven skills for Cursor, Claude Code, and Codex.");
+for (const [, dir] of targets) console.log(dir);
+console.log("Reload the app and describe the screen.");

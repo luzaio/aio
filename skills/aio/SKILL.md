@@ -15,7 +15,7 @@ The ten skills are already installed. aio only decides which one this message ne
 
 ## If one of the ten is missing
 
-Stop. Do not install that skill alone. Run the full installer, which puts `aio` and all ten on disk:
+Stop. Do not install that skill alone. `npx skills add luzaio/aio` only copies this router. Run the full installer, which puts `aio` and all ten on disk. On Windows run the `node` command, not `scripts/install-all.sh`.
 
 ```bash
 git clone https://github.com/luzaio/aio.git
