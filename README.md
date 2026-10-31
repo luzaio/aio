@@ -1,8 +1,10 @@
 # aio
 
-Cursor, Claude, or Codex keeps shipping the same generic interface. aio installs the frontend skills people already use, then opens only the one that matches what you typed.
+Your AI can code. The interface still comes out generic.
 
-Tell your AI this, with the link:
+aio puts ten frontend skills on the machine, and one router with them. You describe the screen. aio opens the skill that fits and leaves the other nine closed.
+
+Paste this to Claude, Cursor, or Codex:
 
 ```text
 Instale https://github.com/01ecstacy/aio e siga a seção Install deste README.
@@ -12,40 +14,28 @@ Instale https://github.com/01ecstacy/aio e siga a seção Install deste README.
 Install https://github.com/01ecstacy/aio and follow the Install section of this README.
 ```
 
-## Install
+Mac, Linux, and Windows. Node.js 22.20 or later. No extra account.
 
-You are the coding agent. The user asked you to install this repository. Run it yourself. Do not stop at printing commands unless the shell fails.
+## Say it like a person
 
-Works on macOS, Linux, and Windows. Needs Git and Node.js 22.20 or later.
-
-1. Clone `https://github.com/01ecstacy/aio` if this checkout is not already on disk.
-2. From the repo root, run `node scripts/install-all.mjs`.
-3. That command is the whole install. It puts eleven skills on disk: `aio` plus the ten frontend skills. `npx skills add 01ecstacy/aio` alone is not enough, because that copies only the router.
-4. The install is finished only when all eleven exist. On Windows the script copies the files, so it does not need an administrator.
-5. Tell the user to reload the app and describe the screen. `aio` then opens one of the ten. It does not install anything else.
-
-## Talk normally
-
-| You type | What happens |
+| You type | aio opens |
 | --- | --- |
-| Build a landing page for a coffee brand. No template look. | A landing page with its own direction |
-| Make this iOS screen look less generic. | Taste and hierarchy, including native UI |
-| Pick a palette and font pairing for a fintech dashboard. | A style, colors, and fonts chosen on purpose |
-| Polish this page. It looks generated. | A craft pass on the screen you already have |
-| Make the hover feel expensive. | Motion and the feel of the interaction |
-| This Next.js page is slow. | A React / Next.js performance pass |
-| These components are a pile of boolean props. | Cleaner component APIs |
-| Check accessibility on the signup form. | An accessibility and UX review |
-| Open the page and screenshot the hero. | The real page, in a browser |
-| Design the settings screen. | A new interface with a point of view |
+| Build a landing page for a coffee brand. No template look. | design-taste-frontend |
+| Make this iOS screen look less generic. | ui-taste |
+| Pick a palette and fonts for a fintech dashboard. | ui-ux-pro-max |
+| Polish this page. It looks generated. | impeccable |
+| Make the hover feel expensive. | emil-design-eng |
+| This Next.js page is slow. | vercel-react-best-practices |
+| These components are a pile of boolean props. | vercel-composition-patterns |
+| Check accessibility on the signup form. | web-design-guidelines |
+| Open the page and screenshot the hero. | agent-browser |
+| Design the settings screen. | frontend-design |
 
-You do not pick a tool. aio does.
+## The ten
 
-## What's inside
+Installed together, once. Counts from [skills.sh](https://skills.sh), 31 October 2026.
 
-Counted on [skills.sh](https://skills.sh) on 31 October 2026. The 24-hour chart that day is mostly video and image packs. Among interface skills, `ui-taste` is the one climbing fastest, and it is in this list. aio does not copy these files. It reads the current one from the author.
-
-| Skill | Installs | Source |
+| Skill | Installs | From |
 | --- | --- | --- |
 | agent-browser | 1.3M | vercel-labs/agent-browser |
 | frontend-design | 1.1M | anthropics/skills |
@@ -58,7 +48,17 @@ Counted on [skills.sh](https://skills.sh) on 31 October 2026. The 24-hour chart 
 | emil-design-eng | 404K | emilkowalski/skills |
 | impeccable | 375K | pbakaus/impeccable |
 
-The install puts all ten on disk with `aio`. One message opens one of them. The other nine stay closed. `aio` does not download a skill later.
+aio does not copy their text. It reads the file each author ships.
+
+## Install
+
+You are the coding agent. The user asked you to install this repository. Run it. Do not stop at printing commands unless the shell fails.
+
+1. Clone `https://github.com/01ecstacy/aio` if this checkout is not already on disk.
+2. From the repo root, run `node scripts/install-all.mjs`.
+3. That is the whole install. It puts eleven skills on disk: `aio` and the ten above. `npx skills add 01ecstacy/aio` alone copies only the router. That is not finished.
+4. Finished means all eleven folders exist. On Windows the script copies files, so it does not need an administrator.
+5. Tell the user to reload the app and describe the screen. aio opens one skill. It does not download the rest later.
 
 ## License
 
