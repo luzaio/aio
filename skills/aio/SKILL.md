@@ -18,7 +18,7 @@ The ten skills are already installed. aio only decides which one this message ne
 Stop. Do not install that skill alone. Run the full installer, which puts `aio` and all ten on disk:
 
 ```bash
-git clone https://github.com/01ecstacy/aio.git
+git clone https://github.com/luzaio/aio.git
 cd aio
 node scripts/install-all.mjs
 ```
