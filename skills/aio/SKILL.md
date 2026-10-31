@@ -7,7 +7,7 @@ description: >-
   animation, polish, or a browser screenshot of the page.
 ---
 
-# aio
+# aio - all in one
 
 One install. The frontend skills people actually have. Open one.
 
