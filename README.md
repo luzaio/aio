@@ -1,6 +1,6 @@
 # aio - all in one
 
-Your agent can code. The screen still looks like everyone else's.
+A hero. Three cards. A gradient button. That is what comes back.
 
 Paste this into Claude, Cursor, or Codex:
 
@@ -8,7 +8,48 @@ Paste this into Claude, Cursor, or Codex:
 Install the skill https://github.com/luzaio/aio
 ```
 
-Then you describe the screen. One opens. The other nine stay closed.
+You describe the screen. aio opens one. The other nine stay closed.
+
+## Say this
+
+| You say | What comes back |
+| --- | --- |
+| Make a coffee landing page. | Type, color, and pace of its own. |
+| This iPhone screen looks generic. | Hierarchy and taste, including native. |
+| Palette and type for a finance app. | Color, type, and style, chosen on purpose. |
+| Polish this. It looks generated. | The screen you have, without the AI look. |
+| Make the hover feel expensive. | Motion, and the weight of the click. |
+| This Next page is slow. | React and Next.js performance. |
+| These components are a pile of booleans. | A component API you can extend. |
+| Review the signup for accessibility. | UX and accessibility. |
+| Open the page and screenshot the hero. | The real site, in the browser. |
+| Design the settings screen. | A new interface, with a point of view. |
+
+## What you get
+
+Ten skills people already install, plus aio. aio does not keep their text. It only picks which one to open.
+
+| | all-time | |
+| --- | --- | --- |
+| agent-browser | 1.3M | Open the real page |
+| frontend-design | 1.1M | A new interface |
+| ui-taste | 861.9K | Taste, web and iOS |
+| vercel-react-best-practices | 857.6K | Fast React and Next |
+| web-design-guidelines | 807.7K | Accessibility |
+| design-taste-frontend | 709.2K | A landing with its own direction |
+| vercel-composition-patterns | 429.7K | A component you can extend |
+| ui-ux-pro-max | 426.4K | Palette, type, style |
+| emil-design-eng | 404.4K | Motion |
+| impeccable | 375.3K | Polish what is already there |
+
+All-time installs on [skills.sh](https://skills.sh/), 31 October 2026. In the last 24 hours, [ui-taste](https://skills.sh/site/uizze.sh/ui-taste) leads this list at 20.3K.
+
+<details>
+<summary>Why the next names on the board stay off</summary>
+
+[design-mobile-apps](https://skills.sh/designed-by-ai/skills/design-mobile-apps) has 1.1M all-time and asks for an API key. [high-end-visual-design](https://skills.sh/leonxlnx/taste-skill/high-end-visual-design) (458.8K) and [redesign-existing-projects](https://skills.sh/leonxlnx/taste-skill/redesign-existing-projects) (458.7K) repeat the landing job [design-taste-frontend](https://skills.sh/leonxlnx/taste-skill/design-taste-frontend) already covers at 709.2K. [ios-design](https://skills.sh/site/uizze.sh/ios-design) (417.2K) repeats the iOS job ui-taste already covers at 861.9K.
+
+</details>
 
 ## Install
 
@@ -25,43 +66,9 @@ Node.js 22.20 or later is required, because that is what the skills CLI requires
 node scripts/install-all.mjs
 ```
 
-3. The script installs eleven skills for Cursor, Claude Code, and Codex: `aio` and the ten in "What you get" below. On Windows it copies files, including when the clone path contains spaces, so it does not need an administrator.
+3. The script installs eleven skills for Cursor, Claude Code, and Codex: `aio` and the ten in "What you get" above. On Windows it copies files, including when the clone path contains spaces, so it does not need an administrator.
 4. Finished means `SKILL.md` exists for all eleven names inside each of these directories: `~/.cursor/skills`, `~/.claude/skills`, and `~/.agents/skills` (Codex). The script exits non-zero if any file is missing. Do not tell the user it worked until that exit code is 0.
 5. Tell the user to reload the app and describe the screen. aio opens one skill. It does not download the rest later.
-
-## Then you say this
-
-| You write | What comes back |
-| --- | --- |
-| Make a coffee landing page. No template look. | A page with its own direction |
-| Make this iPhone screen less generic. | Hierarchy and taste, including native |
-| Pick a palette and a typeface for a finance app. | Color, type, and style chosen on purpose |
-| Polish this. It looks generated. | The screen you already have, without the AI look |
-| Make the hover feel expensive. | The motion and the weight of the click |
-| This Next page is slow. | React / Next.js performance |
-| These components are a pile of booleans. | A clean component API |
-| Review the signup for accessibility. | UX and accessibility |
-| Open the page and screenshot the hero. | The real site, in the browser |
-| Design the settings screen. | A new interface, with a point of view |
-
-## What you get
-
-Ten, plus aio. All-time installs on [skills.sh](https://skills.sh/) on 31 October 2026. Over the last 24 hours the order changes: [ui-taste](https://skills.sh/site/uizze.sh/ui-taste) leads this list, at 20.3K. The list stays these ten. [design-mobile-apps](https://skills.sh/designed-by-ai/skills/design-mobile-apps) has 1.1M all-time and asks for an API key. [high-end-visual-design](https://skills.sh/leonxlnx/taste-skill/high-end-visual-design) (458.8K) and [redesign-existing-projects](https://skills.sh/leonxlnx/taste-skill/redesign-existing-projects) (458.7K) repeat the landing job [design-taste-frontend](https://skills.sh/leonxlnx/taste-skill/design-taste-frontend) already covers at 709.2K. [ios-design](https://skills.sh/site/uizze.sh/ios-design) (417.2K) repeats the iOS job ui-taste already covers at 861.9K.
-
-| | all-time | |
-| --- | --- | --- |
-| agent-browser | 1.3M | open the real page |
-| frontend-design | 1.1M | a new interface |
-| ui-taste | 861.9K | taste, web and iOS |
-| vercel-react-best-practices | 857.6K | fast React / Next |
-| web-design-guidelines | 807.7K | accessibility |
-| design-taste-frontend | 709.2K | a landing that is not a template |
-| vercel-composition-patterns | 429.7K | a component without boolean props |
-| ui-ux-pro-max | 426.4K | palette, type, style |
-| emil-design-eng | 404.4K | motion |
-| impeccable | 375.3K | polish what is already there |
-
-aio does not keep their text. It only chooses which one to open.
 
 ## License
 
