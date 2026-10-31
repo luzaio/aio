@@ -5,20 +5,39 @@ Seu agente programa. A tela sai igual à de todo mundo.
 Cola no Claude, no Cursor ou no Codex:
 
 ```text
-Clona https://github.com/luzaio/aio e, na raiz do clone, roda node scripts/install-all.mjs. Mac, Linux e Windows. npx skills add luzaio/aio sozinho não termina. Segue a seção Install deste README até existirem as onze pastas.
+Instale a skill https://github.com/luzaio/aio
 ```
 
 Your agent can code. The screen still looks like everyone else's.
 
-Paste this into Claude, Cursor, or Codex:
+Paste into Claude, Cursor, or Codex:
 
 ```text
-Clone https://github.com/luzaio/aio and run node scripts/install-all.mjs from the clone root. Mac, Linux, and Windows. npx skills add luzaio/aio by itself is not finished. Follow the Install section of this README until all eleven folders exist.
+Install the skill https://github.com/luzaio/aio
 ```
 
 Aí você descreve a tela. Uma abre. As outras nove ficam fechadas.
 
 Then you describe the screen. One opens. The other nine stay closed.
+
+## Install
+
+You are the coding agent. The user asked to install the skill at this URL. Run the commands below. Do not stop after printing them. `npx skills add luzaio/aio` copies only aio. That is not finished, even if the command exits 0.
+
+The same command works on macOS, Linux, and Windows: `node scripts/install-all.mjs`. Do not run `scripts/install-all.sh` on Windows. That file is a bash shortcut for macOS and Linux.
+
+Node.js 22.20 or later is required, because that is what the skills CLI requires. If the script rejects the installed Node.js, install a current Node.js and run the same command again. Do not switch to `npx skills add luzaio/aio`.
+
+1. Clone `https://github.com/luzaio/aio` if this checkout is not already on disk.
+2. From the repo root, run this in cmd, PowerShell, or bash:
+
+```bash
+node scripts/install-all.mjs
+```
+
+3. The script installs eleven skills for Cursor, Claude Code, and Codex: `aio` and the ten in “O que entra” below. On Windows it copies files, including when the clone path contains spaces, so it does not need an administrator.
+4. Finished means `SKILL.md` exists for all eleven names inside each of these directories: `~/.cursor/skills`, `~/.claude/skills`, and `~/.agents/skills` (Codex). The script exits non-zero if any file is missing. Do not tell the user it worked until that exit code is 0.
+5. Tell the user to reload the app and describe the screen. aio opens one skill. It does not download the rest later.
 
 ## Aí você fala assim
 
@@ -72,25 +91,6 @@ Ten, plus aio. All-time installs on [skills.sh](https://skills.sh/) on 31 Octobe
 O aio não guarda o texto delas. Ele só escolhe qual abrir.
 
 aio does not keep their text. It only chooses which one to open.
-
-## Install
-
-You are the coding agent. The user asked you to install this repository. Run the commands. Do not stop after printing them. `npx skills add luzaio/aio` copies only aio. That is not finished, even if the command exits 0.
-
-The same command works on macOS, Linux, and Windows: `node scripts/install-all.mjs`. Do not run `scripts/install-all.sh` on Windows. That file is a bash shortcut for macOS and Linux.
-
-Node.js 22.20 or later is required, because that is what the skills CLI requires. If the script rejects the installed Node.js, install a current Node.js and run the same command again. Do not switch to `npx skills add luzaio/aio`.
-
-1. Clone `https://github.com/luzaio/aio` if this checkout is not already on disk.
-2. From the repo root, run this in cmd, PowerShell, or bash:
-
-```bash
-node scripts/install-all.mjs
-```
-
-3. The script installs eleven skills for Cursor, Claude Code, and Codex: `aio` and the ten above. On Windows it copies files, including when the clone path contains spaces, so it does not need an administrator.
-4. Finished means `SKILL.md` exists for all eleven names inside each of these directories: `~/.cursor/skills`, `~/.claude/skills`, and `~/.agents/skills` (Codex). The script exits non-zero if any file is missing. Do not tell the user it worked until that exit code is 0.
-5. Tell the user to reload the app and describe the screen. aio opens one skill. It does not download the rest later.
 
 ## License
 
