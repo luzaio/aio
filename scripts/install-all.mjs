@@ -143,4 +143,4 @@ if (missing.length) {
 
 console.log("Done. Sixty-eight skills for Cursor, Claude Code, and Codex.");
 for (const [, dir] of targets) console.log(dir);
-console.log("Reload the app and describe the screen.");
+console.log("Reload the app and say what you want.");
