@@ -11,11 +11,23 @@ description: >-
 
 One install. The frontend skills people actually have. Open one.
 
-aio does not contain those skills. It picks the one row that matches and follows that skill's own `SKILL.md`. Leave the other nine unread.
+The ten skills are already installed. aio only decides which one this message needs, then reads that `SKILL.md`. Leave the other nine unread. Do not install a skill from this file.
+
+## If one of the ten is missing
+
+Stop. Do not install that skill alone. Run the full installer, which puts `aio` and all ten on disk:
+
+```bash
+git clone https://github.com/01ecstacy/aio.git
+cd aio
+node scripts/install-all.mjs
+```
+
+If the repo is already cloned, run `node scripts/install-all.mjs` from its root. When it finishes, come back and open only the one skill that fits.
 
 ## Pick one
 
-If they invoked `/aio` with no task, do not install anything. Show ten plain jobs, in the user's words, and ask which one they want. Do not open with skill filenames.
+If they invoked `/aio` with no task, show ten plain jobs, in the user's words, and ask which one they want. Do not open with skill filenames.
 
 Use the first rule that fits. If none fit, do the task normally. Do not install anything.
 
@@ -47,27 +59,4 @@ Search for a `SKILL.md` whose frontmatter `name` is the chosen skill. Look in th
 
 If you find it, read that file and follow it. Stop. Do not read the other catalog skills, and do not answer from memory of them.
 
-If you do not find it, install that one skill for Cursor, Claude Code, and Codex, then search again and read it:
-
-```bash
-npx skills add OWNER/REPO --skill NAME -g -a cursor -a claude-code -a codex -y
-```
-
-On Windows, add `--copy` so the install does not need a symlink or an administrator.
-
-| Skill | OWNER/REPO |
-| --- | --- |
-| frontend-design | anthropics/skills |
-| ui-taste | uizze.sh |
-| vercel-react-best-practices | vercel-labs/agent-skills |
-| web-design-guidelines | vercel-labs/agent-skills |
-| design-taste-frontend | leonxlnx/taste-skill |
-| vercel-composition-patterns | vercel-labs/agent-skills |
-| ui-ux-pro-max | nextlevelbuilder/ui-ux-pro-max-skill |
-| emil-design-eng | emilkowalski/skills |
-| impeccable | pbakaus/impeccable |
-| agent-browser | vercel-labs/agent-browser |
-
-Pass a single `--skill`. Do not pass `--all`. Do not install a second skill in the same turn.
-
-If the install fails, give the user that one command and stop. Do not reconstruct the upstream skill.
+If you do not find it, go back to "If one of the ten is missing" and run the full installer. Do not reconstruct the skill.

@@ -20,8 +20,9 @@ Works on macOS, Linux, and Windows. Needs Git and Node.js 22.20 or later.
 
 1. Clone `https://github.com/01ecstacy/aio` if this checkout is not already on disk.
 2. From the repo root, run `node scripts/install-all.mjs`.
-3. That installs aio and the ten frontend skills for Cursor, Claude Code, and Codex. On Windows it copies the files, so it does not need an administrator.
-4. Tell the user to reload the app and type `/aio`, or just describe the screen.
+3. That command is the whole install. It puts eleven skills on disk: `aio` plus the ten frontend skills. `npx skills add 01ecstacy/aio` alone is not enough, because that copies only the router.
+4. The install is finished only when all eleven exist. On Windows the script copies the files, so it does not need an administrator.
+5. Tell the user to reload the app and describe the screen. `aio` then opens one of the ten. It does not install anything else.
 
 ## Talk normally
 
@@ -57,7 +58,7 @@ Counted on [skills.sh](https://skills.sh) on 31 October 2026. The 24-hour chart 
 | emil-design-eng | 404K | emilkowalski/skills |
 | impeccable | 375K | pbakaus/impeccable |
 
-One message opens one of these. The other nine stay closed. If that one is missing, aio installs it and then reads it.
+The install puts all ten on disk with `aio`. One message opens one of them. The other nine stay closed. `aio` does not download a skill later.
 
 ## License
 
